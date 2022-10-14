@@ -26,6 +26,7 @@ Route::get('/', 'MainController@index')->name('main');
 Route::resource('products', 'ProductsController'); //kreira automatski rute ya sve metode iz navedenog kontrolera
 Route::resource('carts', 'CartController')->only(['index']);
 Route::resource('products.carts','ProductCartController')->only(['store','destroy']);
+Route::resource('orders', 'OrderController')->only(['create','store']);
 
 Route::get('/test','MainController@index')->name('main.index');
 
