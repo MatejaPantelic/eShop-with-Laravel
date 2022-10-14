@@ -23,7 +23,6 @@ Route::get('/', 'MainController@index')->name('main');
 // Route::match(['patch', 'put'], '/products/{product}','ProductsController@update')->name('products.update');
 // Route::delete('products/{product}', 'ProductsController@destroy')->name('products.destroy');
 
-Route::resource('products', 'ProductsController'); //kreira automatski rute ya sve metode iz navedenog kontrolera
 Route::resource('carts', 'CartController')->only(['index']);
 Route::resource('products.carts','ProductCartController')->only(['store','destroy']);
 Route::resource('orders', 'OrderController')->only(['create','store']);
