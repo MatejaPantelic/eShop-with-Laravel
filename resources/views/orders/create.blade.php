@@ -4,6 +4,13 @@
 
     <h4 class="text-center"><strong>Grand Total: </strong>${{ $cart->total }}</h4>
 
+    <div class="text-center mb-3">
+        <form action="{{ route('orders.store') }}" method="post" class="d-inline">
+            @csrf
+            <button class="btn btn-success" type="submit">Confirm Order</button>
+        </form>
+    </div>
+
     <div class="table-responsive">
         <table class="table table-striped">
             <thead class="thead-light">
@@ -23,7 +30,7 @@
                         </td>
                         <td>{{ $pr->price }}</td>
                         <td>{{ $pr->pivot->quantity }}</td>
-                        <td>{{ $pr->total}}</td>
+                        <td>{{ $pr->total }}</td>
                     </tr>
                 @endforeach
             </tbody>
